@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -275,8 +273,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
-									<integer>3</integer>
+									<integer>2</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -300,7 +298,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>162 145 1135 733 0 0 1440 878 </string>
+						<string>89 145 1135 733 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -311,12 +309,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SGGeohashTest.c</string>
+								<string>SGGeohash.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,18 +324,18 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SGGeohashTest.c</string>
+										<string>SGGeohash.c</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4AC0BBB0107BC6F800E69D9F</string>
+										<string>4AC0BCC3107BE1DC00E69D9F</string>
 										<key>history</key>
 										<array>
-											<string>4AC0BB7F107BC4D200E69D9F</string>
 											<string>4AC0BB80107BC4D200E69D9F</string>
 											<string>4AC0BB81107BC4D200E69D9F</string>
-											<string>4AC0BB82107BC4D200E69D9F</string>
-											<string>4AC0BB83107BC4D200E69D9F</string>
+											<string>4AC0BC38107BD1A500E69D9F</string>
+											<string>4AC0BC4E107BD29F00E69D9F</string>
+											<string>4AC0BCC2107BE1DC00E69D9F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -347,14 +347,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {927, 506}}</string>
+								<string>{{0, 0}, {927, 574}}</string>
 								<key>RubberWindowFrame</key>
-								<string>162 145 1135 733 0 0 1440 878 </string>
+								<string>89 145 1135 733 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>506pt</string>
+							<string>574pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -367,14 +367,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 511}, {927, 181}}</string>
+								<string>{{0, 579}, {927, 113}}</string>
 								<key>RubberWindowFrame</key>
-								<string>162 145 1135 733 0 0 1440 878 </string>
+								<string>89 145 1135 733 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>181pt</string>
+							<string>113pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -533,7 +533,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4AC0BB85107BC4D200E69D9F</string>
 		<string>4AC0BB88107BC4D200E69D9F</string>
 		<string>4AC0BB89107BC4D200E69D9F</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -542,7 +541,7 @@
 		<string>/Users/dsmith/workspace/SimpleGeo/libgeohash/libgeohash.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>162 145 1135 733 0 0 1440 878 </string>
+	<string>89 145 1135 733 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -890,7 +889,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1256, 628}}</string>
 								<key>RubberWindowFrame</key>
-								<string>184 186 1256 669 0 0 1440 878 </string>
+								<string>184 139 1256 669 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -919,7 +918,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>184 186 1256 669 0 0 1440 878 </string>
+			<string>184 139 1256 669 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
