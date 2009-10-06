@@ -1,0 +1,828 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 4AC0BB4A107BC39700E69D9F /* SGGeohashTester */;
+		activeTarget = 4AC0BB48107BC39700E69D9F /* SGGeohashTester */;
+		addToTargets = (
+			D2AAC045055464E500DB518D /* libgeohash */,
+		);
+		codeSenseManager = 4AC0BAAC107BBD9600E69D9F /* Code sense */;
+		executables = (
+			4AC0BB4A107BC39700E69D9F /* SGGeohashTester */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					688,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					648,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 276544890;
+			PBXWorkspaceStateSaveDate = 276544890;
+		};
+		perUserProjectItems = {
+			4AC0BAB6107BBDCB00E69D9F /* XCBuildMessageTextBookmark */ = 4AC0BAB6107BBDCB00E69D9F /* XCBuildMessageTextBookmark */;
+			4AC0BAB7107BBDCB00E69D9F /* PBXTextBookmark */ = 4AC0BAB7107BBDCB00E69D9F /* PBXTextBookmark */;
+			4AC0BABA107BBDD800E69D9F /* PBXTextBookmark */ = 4AC0BABA107BBDD800E69D9F /* PBXTextBookmark */;
+			4AC0BABB107BBDD800E69D9F /* XCBuildMessageTextBookmark */ = 4AC0BABB107BBDD800E69D9F /* XCBuildMessageTextBookmark */;
+			4AC0BABC107BBDD800E69D9F /* PBXTextBookmark */ = 4AC0BABC107BBDD800E69D9F /* PBXTextBookmark */;
+			4AC0BAD0107BBE5F00E69D9F /* PBXTextBookmark */ = 4AC0BAD0107BBE5F00E69D9F /* PBXTextBookmark */;
+			4AC0BAD1107BBE5F00E69D9F /* PBXTextBookmark */ = 4AC0BAD1107BBE5F00E69D9F /* PBXTextBookmark */;
+			4AC0BAD2107BBE5F00E69D9F /* PBXTextBookmark */ = 4AC0BAD2107BBE5F00E69D9F /* PBXTextBookmark */;
+			4AC0BADF107BBF0800E69D9F /* PBXTextBookmark */ = 4AC0BADF107BBF0800E69D9F /* PBXTextBookmark */;
+			4AC0BAE0107BBF1800E69D9F /* PBXTextBookmark */ = 4AC0BAE0107BBF1800E69D9F /* PBXTextBookmark */;
+			4AC0BAE1107BBF6300E69D9F /* PBXTextBookmark */ = 4AC0BAE1107BBF6300E69D9F /* PBXTextBookmark */;
+			4AC0BAF2107BBFDF00E69D9F /* PBXTextBookmark */ = 4AC0BAF2107BBFDF00E69D9F /* PBXTextBookmark */;
+			4AC0BB02107BC13200E69D9F /* PBXTextBookmark */ = 4AC0BB02107BC13200E69D9F /* PBXTextBookmark */;
+			4AC0BB0F107BC1F500E69D9F /* PBXTextBookmark */ = 4AC0BB0F107BC1F500E69D9F /* PBXTextBookmark */;
+			4AC0BB10107BC1F500E69D9F /* XCBuildMessageTextBookmark */ = 4AC0BB10107BC1F500E69D9F /* XCBuildMessageTextBookmark */;
+			4AC0BB11107BC1F500E69D9F /* PBXTextBookmark */ = 4AC0BB11107BC1F500E69D9F /* PBXTextBookmark */;
+			4AC0BB24107BC21F00E69D9F /* PBXTextBookmark */ = 4AC0BB24107BC21F00E69D9F /* PBXTextBookmark */;
+			4AC0BB25107BC21F00E69D9F /* PBXTextBookmark */ = 4AC0BB25107BC21F00E69D9F /* PBXTextBookmark */;
+			4AC0BB26107BC21F00E69D9F /* XCBuildMessageTextBookmark */ = 4AC0BB26107BC21F00E69D9F /* XCBuildMessageTextBookmark */;
+			4AC0BB27107BC21F00E69D9F /* PBXTextBookmark */ = 4AC0BB27107BC21F00E69D9F /* PBXTextBookmark */;
+			4AC0BB38107BC30500E69D9F /* XCBuildMessageTextBookmark */ = 4AC0BB38107BC30500E69D9F /* XCBuildMessageTextBookmark */;
+			4AC0BB39107BC30500E69D9F /* PBXTextBookmark */ = 4AC0BB39107BC30500E69D9F /* PBXTextBookmark */;
+			4AC0BB3C107BC31200E69D9F /* PBXTextBookmark */ = 4AC0BB3C107BC31200E69D9F /* PBXTextBookmark */;
+			4AC0BB40107BC32300E69D9F /* PBXTextBookmark */ = 4AC0BB40107BC32300E69D9F /* PBXTextBookmark */;
+			4AC0BB41107BC32300E69D9F /* XCBuildMessageTextBookmark */ = 4AC0BB41107BC32300E69D9F /* XCBuildMessageTextBookmark */;
+			4AC0BB42107BC32300E69D9F /* PBXTextBookmark */ = 4AC0BB42107BC32300E69D9F /* PBXTextBookmark */;
+			4AC0BB54107BC3B900E69D9F /* PBXTextBookmark */ = 4AC0BB54107BC3B900E69D9F /* PBXTextBookmark */;
+			4AC0BB5A107BC3C400E69D9F /* PBXTextBookmark */ = 4AC0BB5A107BC3C400E69D9F /* PBXTextBookmark */;
+			4AC0BB61107BC3D100E69D9F /* PBXTextBookmark */ = 4AC0BB61107BC3D100E69D9F /* PBXTextBookmark */;
+			4AC0BB66107BC3DE00E69D9F /* PBXTextBookmark */ = 4AC0BB66107BC3DE00E69D9F /* PBXTextBookmark */;
+			4AC0BB69107BC3FA00E69D9F /* PBXTextBookmark */ = 4AC0BB69107BC3FA00E69D9F /* PBXTextBookmark */;
+			4AC0BB6C107BC43D00E69D9F /* PBXTextBookmark */ = 4AC0BB6C107BC43D00E69D9F /* PBXTextBookmark */;
+			4AC0BB6D107BC43D00E69D9F /* XCBuildMessageTextBookmark */ = 4AC0BB6D107BC43D00E69D9F /* XCBuildMessageTextBookmark */;
+			4AC0BB6F107BC43D00E69D9F /* PBXTextBookmark */ = 4AC0BB6F107BC43D00E69D9F /* PBXTextBookmark */;
+			4AC0BB77107BC47D00E69D9F /* PBXTextBookmark */ = 4AC0BB77107BC47D00E69D9F /* PBXTextBookmark */;
+			4AC0BB7A107BC48900E69D9F /* PBXTextBookmark */ = 4AC0BB7A107BC48900E69D9F /* PBXTextBookmark */;
+			4AC0BB7B107BC49600E69D9F /* PBXTextBookmark */ = 4AC0BB7B107BC49600E69D9F /* PBXTextBookmark */;
+			4AC0BB7C107BC49F00E69D9F /* PBXBookmark */ = 4AC0BB7C107BC49F00E69D9F /* PBXBookmark */;
+			4AC0BB7F107BC4D200E69D9F /* PBXTextBookmark */ = 4AC0BB7F107BC4D200E69D9F /* PBXTextBookmark */;
+			4AC0BB80107BC4D200E69D9F /* PBXTextBookmark */ = 4AC0BB80107BC4D200E69D9F /* PBXTextBookmark */;
+			4AC0BB81107BC4D200E69D9F /* PlistBookmark */ = 4AC0BB81107BC4D200E69D9F /* PlistBookmark */;
+			4AC0BB82107BC4D200E69D9F /* PBXTextBookmark */ = 4AC0BB82107BC4D200E69D9F /* PBXTextBookmark */;
+			4AC0BB83107BC4D200E69D9F /* PBXTextBookmark */ = 4AC0BB83107BC4D200E69D9F /* PBXTextBookmark */;
+			4AC0BB84107BC4D200E69D9F /* PBXTextBookmark */ = 4AC0BB84107BC4D200E69D9F /* PBXTextBookmark */;
+			4AC0BB87107BC4D200E69D9F /* PBXTextBookmark */ = 4AC0BB87107BC4D200E69D9F /* PBXTextBookmark */;
+			4AC0BB8A107BC4EE00E69D9F /* PBXTextBookmark */ = 4AC0BB8A107BC4EE00E69D9F /* PBXTextBookmark */;
+			4AC0BB91107BC5BF00E69D9F /* PBXTextBookmark */ = 4AC0BB91107BC5BF00E69D9F /* PBXTextBookmark */;
+			4AC0BB94107BC60B00E69D9F /* PBXTextBookmark */ = 4AC0BB94107BC60B00E69D9F /* PBXTextBookmark */;
+			4AC0BB95107BC61400E69D9F /* PBXTextBookmark */ = 4AC0BB95107BC61400E69D9F /* PBXTextBookmark */;
+			4AC0BB96107BC61800E69D9F /* PBXTextBookmark */ = 4AC0BB96107BC61800E69D9F /* PBXTextBookmark */;
+			4AC0BB99107BC63500E69D9F /* PBXTextBookmark */ = 4AC0BB99107BC63500E69D9F /* PBXTextBookmark */;
+			4AC0BB9C107BC64100E69D9F /* PBXTextBookmark */ = 4AC0BB9C107BC64100E69D9F /* PBXTextBookmark */;
+			4AC0BB9F107BC66400E69D9F /* PBXTextBookmark */ = 4AC0BB9F107BC66400E69D9F /* PBXTextBookmark */;
+			4AC0BBA2107BC69500E69D9F /* PBXTextBookmark */ = 4AC0BBA2107BC69500E69D9F /* PBXTextBookmark */;
+			4AC0BBA5107BC6AE00E69D9F /* PBXTextBookmark */ = 4AC0BBA5107BC6AE00E69D9F /* PBXTextBookmark */;
+			4AC0BBA8107BC6B700E69D9F /* PBXTextBookmark */ = 4AC0BBA8107BC6B700E69D9F /* PBXTextBookmark */;
+			4AC0BBAB107BC6DE00E69D9F /* PBXTextBookmark */ = 4AC0BBAB107BC6DE00E69D9F /* PBXTextBookmark */;
+			4AC0BBAC107BC6E500E69D9F /* PBXTextBookmark */ = 4AC0BBAC107BC6E500E69D9F /* PBXTextBookmark */;
+			4AC0BBAD107BC6E500E69D9F /* PBXTextBookmark */ = 4AC0BBAD107BC6E500E69D9F /* PBXTextBookmark */;
+			4AC0BBB0107BC6F800E69D9F /* PBXTextBookmark */ = 4AC0BBB0107BC6F800E69D9F /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4AC0BAAB107BBD9600E69D9F /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {866, 474}}";
+			sepNavSelRange = "{264, 0}";
+			sepNavVisRange = "{0, 352}";
+		};
+	};
+	4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1083, 1430}}";
+			sepNavSelRange = "{2497, 0}";
+			sepNavVisRange = "{1419, 1309}";
+			sepNavWindowFrame = "{{207, 194}, {879, 643}}";
+		};
+	};
+	4AC0BAAB107BBD9600E69D9F /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4AC0BAAC107BBD9600E69D9F /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4AC0BAB6107BBDCB00E69D9F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected '=', ',', ';', 'asm' or '__attribute__' before '*' token";
+		fRef = 4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 16;
+		rType = 1;
+	};
+	4AC0BAB7107BBDCB00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */;
+		name = "SGGeohash.h: 10";
+		rLen = 0;
+		rLoc = 237;
+		rType = 0;
+		vrLen = 270;
+		vrLoc = 0;
+	};
+	4AC0BABA107BBDD800E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 19";
+		rLen = 0;
+		rLoc = 356;
+		rType = 0;
+		vrLen = 619;
+		vrLoc = 130;
+	};
+	4AC0BABB107BBDD800E69D9F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected '=', ',', ';', 'asm' or '__attribute__' before '*' token";
+		fRef = 4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 16;
+		rType = 1;
+	};
+	4AC0BABC107BBDD800E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */;
+		name = "SGGeohash.h: 11";
+		rLen = 0;
+		rLoc = 324;
+		rType = 0;
+		vrLen = 240;
+		vrLoc = 0;
+	};
+	4AC0BAD0107BBE5F00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */;
+		name = "SGGeohash.h: 15";
+		rLen = 0;
+		rLoc = 235;
+		rType = 0;
+		vrLen = 352;
+		vrLoc = 0;
+	};
+	4AC0BAD1107BBE5F00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 19";
+		rLen = 0;
+		rLoc = 356;
+		rType = 0;
+		vrLen = 619;
+		vrLoc = 130;
+	};
+	4AC0BAD2107BBE5F00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 55";
+		rLen = 0;
+		rLoc = 904;
+		rType = 0;
+		vrLen = 831;
+		vrLoc = 530;
+	};
+	4AC0BADF107BBF0800E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 100";
+		rLen = 0;
+		rLoc = 2304;
+		rType = 0;
+		vrLen = 1297;
+		vrLoc = 1509;
+	};
+	4AC0BAE0107BBF1800E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 100";
+		rLen = 0;
+		rLoc = 2424;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 1509;
+	};
+	4AC0BAE1107BBF6300E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 100";
+		rLen = 0;
+		rLoc = 2370;
+		rType = 0;
+		vrLen = 1261;
+		vrLoc = 1509;
+	};
+	4AC0BAF2107BBFDF00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 83";
+		rLen = 0;
+		rLoc = 1636;
+		rType = 0;
+		vrLen = 1166;
+		vrLoc = 945;
+	};
+	4AC0BAF3107BC02000E69D9F /* SGGeohashTest.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = SGGeohashTest.h;
+		path = /Users/dsmith/workspace/SimpleGeo/libgeohash/SGGeohashTest.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {866, 474}}";
+			sepNavSelRange = "{135, 0}";
+			sepNavVisRange = "{0, 135}";
+		};
+	};
+	4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {866, 474}}";
+			sepNavSelRange = "{423, 0}";
+			sepNavVisRange = "{0, 423}";
+			sepNavWindowFrame = "{{38, 209}, {879, 643}}";
+		};
+	};
+	4AC0BB02107BC13200E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */;
+		name = "SGGeohash.h: 17";
+		rLen = 0;
+		rLoc = 237;
+		rType = 0;
+		vrLen = 236;
+		vrLoc = 0;
+	};
+	4AC0BB0F107BC1F500E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */;
+		name = "SGGeohash.h: 17";
+		rLen = 0;
+		rLoc = 237;
+		rType = 0;
+		vrLen = 236;
+		vrLoc = 0;
+	};
+	4AC0BB10107BC1F500E69D9F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "SenTestingKit/SenTestingKit.h: No such file or directory";
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 21;
+		rType = 1;
+	};
+	4AC0BB11107BC1F500E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 9";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 251;
+		vrLoc = 0;
+	};
+	4AC0BB24107BC21F00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 62";
+		rLen = 0;
+		rLoc = 958;
+		rType = 0;
+		vrLen = 1166;
+		vrLoc = 945;
+	};
+	4AC0BB25107BC21F00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF3107BC02000E69D9F /* SGGeohashTest.h */;
+		name = "SGGeohashTest.h: 9";
+		rLen = 0;
+		rLoc = 135;
+		rType = 0;
+		vrLen = 135;
+		vrLoc = 0;
+	};
+	4AC0BB26107BC21F00E69D9F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "SenTestingKit/SenTestingKit.h: No such file or directory";
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 21;
+		rType = 1;
+	};
+	4AC0BB27107BC21F00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 19";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 570;
+		vrLoc = 0;
+	};
+	4AC0BB38107BC30500E69D9F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Implicit declaration of function 'printf'";
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 16;
+		rType = 1;
+	};
+	4AC0BB39107BC30500E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 10";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 314;
+		vrLoc = 80;
+	};
+	4AC0BB3C107BC31200E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 12";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 270;
+		vrLoc = 90;
+	};
+	4AC0BB40107BC32300E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF3107BC02000E69D9F /* SGGeohashTest.h */;
+		name = "SGGeohashTest.h: 9";
+		rLen = 0;
+		rLoc = 135;
+		rType = 0;
+		vrLen = 135;
+		vrLoc = 0;
+	};
+	4AC0BB41107BC32300E69D9F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Implicit declaration of function 'printf'";
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 16;
+		rType = 1;
+	};
+	4AC0BB42107BC32300E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 18";
+		rLen = 0;
+		rLoc = 405;
+		rType = 0;
+		vrLen = 414;
+		vrLoc = 0;
+	};
+	4AC0BB48107BC39700E69D9F /* SGGeohashTester */ = {
+		activeExec = 0;
+		executables = (
+			4AC0BB4A107BC39700E69D9F /* SGGeohashTester */,
+		);
+	};
+	4AC0BB4A107BC39700E69D9F /* SGGeohashTester */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = SGGeohashTester;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	4AC0BB54107BC3B900E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 12";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 333;
+		vrLoc = 80;
+	};
+	4AC0BB5A107BC3C400E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 12";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 333;
+		vrLoc = 80;
+	};
+	4AC0BB61107BC3D100E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 12";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 333;
+		vrLoc = 80;
+	};
+	4AC0BB66107BC3DE00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 12";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 333;
+		vrLoc = 80;
+	};
+	4AC0BB69107BC3FA00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.m: 12";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 340;
+		vrLoc = 80;
+	};
+	4AC0BB6C107BC43D00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.c: 12";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 340;
+		vrLoc = 80;
+	};
+	4AC0BB6D107BC43D00E69D9F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected ')' before '*' token";
+		fRef = 4AC0BB6E107BC43D00E69D9F /* NSObjCRuntime.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 192;
+		rType = 1;
+	};
+	4AC0BB6E107BC43D00E69D9F /* NSObjCRuntime.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSObjCRuntime.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {866, 3263}}";
+			sepNavSelRange = "{6179, 0}";
+			sepNavVisRange = "{5652, 1443}";
+		};
+	};
+	4AC0BB6F107BC43D00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 606;
+		vrLoc = 6578;
+	};
+	4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */ = {
+		isa = PBXFileReference;
+		name = NSObjCRuntime.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {796, 3315}}";
+			sepNavSelRange = "{6804, 0}";
+			sepNavVisRange = "{6803, 501}";
+		};
+	};
+	4AC0BB77107BC47D00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB7A107BC48900E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB7B107BC49600E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB7C107BC49F00E69D9F /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+	};
+	4AC0BB7F107BC4D200E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 62";
+		rLen = 0;
+		rLoc = 958;
+		rType = 0;
+		vrLen = 1166;
+		vrLoc = 945;
+	};
+	4AC0BB80107BC4D200E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB6E107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 180";
+		rLen = 0;
+		rLoc = 6179;
+		rType = 0;
+		vrLen = 1405;
+		vrLoc = 5652;
+	};
+	4AC0BB81107BC4D200E69D9F /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 4AC0BB4B107BC39700E69D9F /* SGGeohashTester-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/dsmith/workspace/SimpleGeo/libgeohash/SGGeohashTester-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	4AC0BB82107BC4D200E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */;
+		name = "SGGeohash.h: 17";
+		rLen = 0;
+		rLoc = 264;
+		rType = 0;
+		vrLen = 352;
+		vrLoc = 0;
+	};
+	4AC0BB83107BC4D200E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.c: 10";
+		rLen = 0;
+		rLoc = 158;
+		rType = 0;
+		vrLen = 421;
+		vrLoc = 0;
+	};
+	4AC0BB84107BC4D200E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.c: 22";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 423;
+		vrLoc = 0;
+	};
+	4AC0BB87107BC4D200E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 96";
+		rLen = 0;
+		rLoc = 2132;
+		rType = 0;
+		vrLen = 1507;
+		vrLoc = 1019;
+	};
+	4AC0BB8A107BC4EE00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB91107BC5BF00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB94107BC60B00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB95107BC61400E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB96107BC61800E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB99107BC63500E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB9C107BC64100E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BB9F107BC66400E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BBA2107BC69500E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BBA5107BC6AE00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BBA8107BC6B700E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BBAB107BC6DE00E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BB70107BC43D00E69D9F /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 193";
+		rLen = 0;
+		rLoc = 6804;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 6803;
+	};
+	4AC0BBAC107BC6E500E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.c: 22";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 423;
+		vrLoc = 0;
+	};
+	4AC0BBAD107BC6E500E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 94";
+		rLen = 0;
+		rLoc = 2181;
+		rType = 0;
+		vrLen = 1309;
+		vrLoc = 1419;
+	};
+	4AC0BBB0107BC6F800E69D9F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAF4107BC02000E69D9F /* SGGeohashTest.c */;
+		name = "SGGeohashTest.c: 22";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 423;
+		vrLoc = 0;
+	};
+	D2AAC045055464E500DB518D /* libgeohash */ = {
+		activeExec = 0;
+	};
+}
