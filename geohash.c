@@ -1,5 +1,5 @@
 /*
- *  SGGeohash.c
+ *  geohahs.c
  *  libgeohash
  *
  *  Created by Derek Smith on 10/6/09.
@@ -7,7 +7,7 @@
  *
  */
 
-#include "SGGeohash.h"
+#include "geohash.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -24,41 +24,43 @@
 #define SOUTH               2
 #define WEST                3
 
-typedef struct SGIntervalStruct {
+typedef struct IntervalStruct {
     
     double high;
     double low;
     
-} SGInterval;
+} Interval;
 
-static char charMap[32] =  "0123456789bcdefghjkmnpqrstuvwxyz";
+
+/* Normal 32 characer map used for geohashing */
+static char char_map[32] =  "0123456789bcdefghjkmnpqrstuvwxyz";
 
 /*
  *  The follow character maps were created by Dave Troy and used in his Javascript Geohashing
  *  library. http://github.com/davetroy/geohash-js
  */
 
-static char* evenNeighbors[] = {"p0r21436x8zb9dcf5h7kjnmqesgutwvy",
+static char *even_neighbors[] = {"p0r21436x8zb9dcf5h7kjnmqesgutwvy",
                                 "bc01fg45238967deuvhjyznpkmstqrwx", 
                                 "14365h7k9dcfesgujnmqp0r2twvyx8zb",
                                 "238967debc01fg45kmstqrwxuvhjyznp"
                                 };
 
-static char* oddNeighbors[] = {"bc01fg45238967deuvhjyznpkmstqrwx", 
+static char *odd_neighbors[] = {"bc01fg45238967deuvhjyznpkmstqrwx", 
                                "p0r21436x8zb9dcf5h7kjnmqesgutwvy",
                                 "238967debc01fg45kmstqrwxuvhjyznp",
                                "14365h7k9dcfesgujnmqp0r2twvyx8zb"    
                                 };
 
-static char* evenBorders[] = {"prxz", "bcfguvyz", "028b", "0145hjnp"};
-static char* oddBorders[] = {"bcfguvyz", "prxz", "0145hjnp", "028b"};
+static char *even_borders[] = {"prxz", "bcfguvyz", "028b", "0145hjnp"};
+static char *odd_borders[] = {"bcfguvyz", "prxz", "0145hjnp", "028b"};
 
-unsigned int IndexForChar(char c, char* string) {
+unsigned int index_for_char(char c, char *string) {
     
     int index = -1;
-    int stringAmount = strlen(string);
+    int string_amount = strlen(string);
     int i;
-    for(i = 0; i < stringAmount; i++) {
+    for(i = 0; i < string_amount; i++) {
         
         if(c == string[i]) {
             
@@ -71,36 +73,36 @@ unsigned int IndexForChar(char c, char* string) {
     return index;
 }
 
-char* GetNeighbor(char* hash, int direction) {
+char* get_neighbor(char *hash, int direction) {
     
-    int hashLength = strlen(hash);
+    int hash_length = strlen(hash);
     
-	char lastChar = hash[hashLength - 1];
+	char last_char = hash[hash_length - 1];
     
-    int isOdd = hashLength % 2;
-    char** border = isOdd ? oddBorders : evenBorders;
-    char** neighbor = isOdd ? oddNeighbors : evenNeighbors; 
+    int is_odd = hash_length % 2;
+    char **border = is_odd ? odd_borders : even_borders;
+    char **neighbor = is_odd ? odd_neighbors : even_neighbors; 
     
-    char* base = malloc(sizeof(char) * 1);
+    char *base = malloc(sizeof(char) * 1);
     base[0] = '\0';
-    strncat(base, hash, hashLength - 1);
+    strncat(base, hash, hash_length - 1);
     
-	if(IndexForChar(lastChar, border[direction]) != -1)
-		base = GetNeighbor(base, direction);
+	if(index_for_char(last_char, border[direction]) != -1)
+		base = get_neighbor(base, direction);
     
-    int indexOfNeighbor = IndexForChar(lastChar, neighbor[direction]);
-    lastChar = charMap[indexOfNeighbor];
+    int neighbor_index = index_for_char(last_char, neighbor[direction]);
+    last_char = char_map[neighbor_index];
         
-    char* lastHash = malloc(sizeof(char) * 2);
-    lastHash[0] = lastChar;
-    lastHash[1] = '\0';
-    strcat(base, lastHash);
-    free(lastHash);
+    char *last_hash = malloc(sizeof(char) * 2);
+    last_hash[0] = last_char;
+    last_hash[1] = '\0';
+    strcat(base, last_hash);
+    free(last_hash);
     
 	return base;
 }
 
-char* SGGeohashEncode(double lat, double lng, int precision) {
+char* geohash_encode(double lat, double lng, int precision) {
     
     if(precision < 1 || precision > 20)
         precision = 12;     // Default at 12
@@ -114,23 +116,24 @@ char* SGGeohashEncode(double lat, double lng, int precision) {
         
         precision *= 5.0;
         
-        SGInterval latInterval = {MAX_LAT, MIN_LAT};
-        SGInterval lngInterval = {MAX_LONG, MIN_LONG};
-        SGInterval* interval;
+        Interval lat_interval = {MAX_LAT, MIN_LAT};
+        Interval lng_interval = {MAX_LONG, MIN_LONG};
+
+        Interval *interval;
         double coord, mid;
-        int isEven = 1;
+        int is_even = 1;
         unsigned int hashChar = 0;
         int i;
         for(i = 1; i <= precision; i++) {
          
-            if(isEven) {
+            if(is_even) {
             
-                interval = &lngInterval;
+                interval = &lng_interval;
                 coord = lng;                
                 
             } else {
                 
-                interval = &latInterval;
+                interval = &lat_interval;
                 coord = lat;   
             }
             
@@ -147,12 +150,12 @@ char* SGGeohashEncode(double lat, double lng, int precision) {
             
             if(!(i % 5)) {
                 
-                hash[(i - 1) / 5] = charMap[hashChar];
+                hash[(i - 1) / 5] = char_map[hashChar];
                 hashChar = 0;
 
             }
             
-            isEven = !isEven;
+            is_even = !is_even;
         }
      
         
@@ -161,55 +164,55 @@ char* SGGeohashEncode(double lat, double lng, int precision) {
     return hash;
 }
 
-SGGeoCoord SGGeohashDecode(char* hash) {
+GeoCoord geohash_decode(char *hash) {
     
-    SGGeoCoord coordinate = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+    GeoCoord coordinate = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     
     if(hash) {
         
-        int charAmount = strlen(hash);
+        int char_amount = strlen(hash);
         
-        if(charAmount) {
+        if(char_amount) {
             
-            unsigned int charMapIndex;
-            SGInterval latInterval = {MAX_LAT, MIN_LAT};
-            SGInterval lngInterval = {MAX_LONG, MIN_LONG};
-            SGInterval *interval;
+            unsigned int char_mapIndex;
+            Interval lat_interval = {MAX_LAT, MIN_LAT};
+            Interval lng_interval = {MAX_LONG, MIN_LONG};
+            Interval *interval;
         
-            int isEven = 1;
+            int is_even = 1;
             double delta;
             int i, j;
-            for(i = 0; i < charAmount; i++) {
+            for(i = 0; i < char_amount; i++) {
             
-                charMapIndex = IndexForChar(hash[i], (char*)charMap);
+                char_mapIndex = index_for_char(hash[i], (char*)char_map);
                 
-                if(charMapIndex < 0)
+                if(char_mapIndex < 0)
                     break;
             
                 // Interpret the last 5 bits of the integer
                 for(j = 0; j < 5; j++) {
                 
-                    interval = isEven ? &lngInterval : &latInterval;
+                    interval = is_even ? &lng_interval : &lat_interval;
                 
                     delta = (interval->high - interval->low) / 2.0;
                 
-                    if((charMapIndex << j) & 0x0010)
+                    if((char_mapIndex << j) & 0x0010)
                         interval->low += delta;
                     else
                         interval->high -= delta;
                 
-                    isEven = !isEven;
+                    is_even = !is_even;
                 }
             
             }
             
-            coordinate.latitude = latInterval.high - ((latInterval.high - latInterval.low) / 2.0);
-            coordinate.longitude = lngInterval.high - ((lngInterval.high - lngInterval.low) / 2.0);
+            coordinate.latitude = lat_interval.high - ((lat_interval.high - lat_interval.low) / 2.0);
+            coordinate.longitude = lng_interval.high - ((lng_interval.high - lng_interval.low) / 2.0);
             
-            coordinate.north = latInterval.high;
-            coordinate.east = lngInterval.high;
-            coordinate.south = latInterval.low;
-            coordinate.west = lngInterval.low;
+            coordinate.north = lat_interval.high;
+            coordinate.east = lng_interval.high;
+            coordinate.south = lat_interval.low;
+            coordinate.west = lng_interval.low;
         }
     }
     
@@ -217,7 +220,7 @@ SGGeoCoord SGGeohashDecode(char* hash) {
 }
 
 
-char** SGGeohashNeighbors(char* hash) {
+char** geohash_neighbors(char *hash) {
 
     char** neighbors = NULL;
     
@@ -226,14 +229,14 @@ char** SGGeohashNeighbors(char* hash) {
         // N, NE, E, SE, S, SW, W, NW
         neighbors = (char**)malloc(sizeof(char*) * 8);
         
-        neighbors[0] = GetNeighbor(hash, NORTH);
-        neighbors[1] = GetNeighbor(neighbors[0], EAST);
-        neighbors[2] = GetNeighbor(hash, EAST);
-        neighbors[3] = GetNeighbor(neighbors[2], SOUTH);
-        neighbors[4] = GetNeighbor(hash, SOUTH);
-        neighbors[5] = GetNeighbor(neighbors[4], WEST);                
-        neighbors[6] = GetNeighbor(hash, WEST);
-        neighbors[7] = GetNeighbor(neighbors[6], NORTH);        
+        neighbors[0] = get_neighbor(hash, NORTH);
+        neighbors[1] = get_neighbor(neighbors[0], EAST);
+        neighbors[2] = get_neighbor(hash, EAST);
+        neighbors[3] = get_neighbor(neighbors[2], SOUTH);
+        neighbors[4] = get_neighbor(hash, SOUTH);
+        neighbors[5] = get_neighbor(neighbors[4], WEST);                
+        neighbors[6] = get_neighbor(hash, WEST);
+        neighbors[7] = get_neighbor(neighbors[6], NORTH);        
 
 
     

@@ -3,12 +3,14 @@
 all: library test
 
 library:
-	gcc -c SGGeohash.c -o geohash.o
+	gcc -c geohash.c -o geohash.o
 	ar rcs libgeohash.a geohash.o
 	rm geohash.o
+	
 test:
-	gcc SGGeohashTest.c libgeohash.a 	
+	gcc geohash_test.c libgeohash.a 	
 	./a.out
 	rm a.out
+	
 clean: 
 	rm -rf *.a *.o

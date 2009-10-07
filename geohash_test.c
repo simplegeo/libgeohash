@@ -1,17 +1,17 @@
 //
-//  SGGeohashTest.c
+//  geohash_test.c
 //  libgeohash
 //
 //  Created by Derek Smith on 10/6/09.
 //  Copyright 2009 SimpleGeo. All rights reserved.
 //
 
-#include "SGGeohash.h"
+#include "geohash.h"
 
 #include <string.h>
 #include <stdio.h>
 
-void checkCoords(SGGeoCoord coord, SGGeoCoord expected) {
+void check_coords(GeoCoord coord, GeoCoord expected) {
  
     char* valueTitle = NULL;
     double expectedValue;
@@ -82,36 +82,36 @@ int main() {
 
     // Decoder
     
-    SGGeoCoord coord = SGGeohashDecode("ezs42");
-    SGGeoCoord expectedCoord = {42.60498046875, -5.60302734375, 42.626953125, -5.5810546875, 42.5830078125, -5.625};
-    checkCoords(coord, expectedCoord);
+    GeoCoord coord = geohash_decode("ezs42");
+    GeoCoord expectedCoord = {42.60498046875, -5.60302734375, 42.626953125, -5.5810546875, 42.5830078125, -5.625};
+    check_coords(coord, expectedCoord);
 
     
-    coord = SGGeohashDecode("ezs42gx");
-    expectedCoord = (SGGeoCoord){42.602920532226562, -5.5817413330078125, 42.603607177734375, -5.581054687500000, 42.60223388671875, -5.582427978515625};
-    checkCoords(coord, expectedCoord);
+    coord = geohash_decode("ezs42gx");
+    expectedCoord = (GeoCoord){42.602920532226562, -5.5817413330078125, 42.603607177734375, -5.581054687500000, 42.60223388671875, -5.582427978515625};
+    check_coords(coord, expectedCoord);
     
-    coord = SGGeohashDecode("9xj5smj4w40");
-    expectedCoord = (SGGeoCoord){40.018140748143196, -105.27485780417919, 40.01814141869545, -105.27485713362694, 40.018140077590942, -105.27485847473145};
-    checkCoords(coord, expectedCoord);
+    coord = geohash_decode("9xj5smj4w40");
+    expectedCoord = (GeoCoord){40.018140748143196, -105.27485780417919, 40.01814141869545, -105.27485713362694, 40.018140077590942, -105.27485847473145};
+    check_coords(coord, expectedCoord);
     
     // Encoder
     
-    char* hash = SGGeohashEncode(42.60498046875, -5.60302734375, 5);
+    char* hash = geohash_encode(42.60498046875, -5.60302734375, 5);
     checkHashes(hash, "ezs42");
     
-    hash = SGGeohashEncode(40.018141, -105.274858, 12);
+    hash = geohash_encode(40.018141, -105.274858, 12);
     checkHashes(hash, "9xj5smj4w40m");
 
-    hash = SGGeohashEncode(40.018141, -105.274858, 2);
+    hash = geohash_encode(40.018141, -105.274858, 2);
     checkHashes(hash, "9x");
     
-    hash = SGGeohashEncode(40.018141, -105.274858, 0);
+    hash = geohash_encode(40.018141, -105.274858, 0);
     checkHashes(hash, "9xj5smj4w40m");
     
     // Neighbors
     
-    char** neighbors = SGGeohashNeighbors("ezs42");
+    char** neighbors = geohash_neighbors("ezs42");
 
     char* expectedNeighbors[8] = {"ezs48", "ezs49", "ezs43", "ezs41", "ezs40", "ezefp", "ezefr", "ezefx"};
     checkNeighbors(neighbors, expectedNeighbors);
@@ -121,7 +121,7 @@ int main() {
     expectedNeighbors[4] = "9xj5smj4w40k"; expectedNeighbors[5] = "9xj5smj4w40h";
     expectedNeighbors[6] = "9xj5smj4w40j"; expectedNeighbors[7] = "9xj5smj4w40n";
     
-    neighbors = SGGeohashNeighbors("9xj5smj4w40m");
+    neighbors = geohash_neighbors("9xj5smj4w40m");
     checkNeighbors(neighbors, expectedNeighbors);
     
     printf("All Tests Passed\n");
