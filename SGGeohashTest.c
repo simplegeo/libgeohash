@@ -3,7 +3,7 @@
 //  libgeohash
 //
 //  Created by Derek Smith on 10/6/09.
-//  Copyright 2009 CrashCorp. All rights reserved.
+//  Copyright 2009 SimpleGeo. All rights reserved.
 //
 
 #include "SGGeohash.h"
@@ -35,9 +35,14 @@ int main() {
     expectedCoord = (SGGeoCoord){42.62489318848, -5.58174133301};
     checkCoords(coord, expectedCoord); 
     
+    // Encoder
+    
     char* hash = SGGeohashEncode(42.60498046875, -5.60302734375, 5);
     checkHashes(hash, "ezs42");
-
+    
+    // Bounding box 
+    
+    
     return 0;
 }
 

@@ -3,7 +3,7 @@
  *  libgeohash
  *
  *  Created by Derek Smith on 10/6/09.
- *  Copyright 2009 CrashCorp. All rights reserved.
+ *  Copyright 2009 SimpleGeo. All rights reserved.
  *
  */
 
@@ -19,6 +19,11 @@
 #define MAX_LONG            180.0
 #define MIN_LONG            -180.0
 
+#define NORTH               0
+#define EAST                1
+#define SOUTH               2
+#define WEST                3
+
 typedef struct SGIntervalStruct {
     
     double high;
@@ -26,15 +31,36 @@ typedef struct SGIntervalStruct {
     
 } SGInterval;
 
-static unsigned char charMap[32] = 
-"0123456789bcdefghjkmnpqrstuvwxyz";
+static char charMap[32] =  "0123456789bcdefghjkmnpqrstuvwxyz";
 
-unsigned int IndexForChar(char c) {
+/*
+ *  The follow character maps were created by Dave Troy and used in his Javascript Geohashing
+ *  library. http://github.com/davetroy/geohash-js
+ */
+
+static char* evenNeighbors[] = {"p0r21436x8zb9dcf5h7kjnmqesgutwvy",
+                                "bc01fg45238967deuvhjyznpkmstqrwx", 
+                                "14365h7k9dcfesgujnmqp0r2twvyx8zb",
+                                "238967debc01fg45kmstqrwxuvhjyznp"
+                                };
+
+static char* oddNeighbors[] = {"bc01fg45238967deuvhjyznpkmstqrwx", 
+                               "p0r21436x8zb9dcf5h7kjnmqesgutwvy",
+                               "14365h7k9dcfesgujnmqp0r2twvyx8zb",    
+                                "238967debc01fg45kmstqrwxuvhjyznp"    
+                                };
+
+static char* evenBorders[] = {"prxz", "bcfguvyz", "028b", "0145hjnp"};
+static char* oddBorders[] = {"bcfguvyz", "prxz", "0145hjnp", "028b"};
+
+unsigned int IndexForChar(char c, char* string) {
     
     int index = -1;
-    for(int i = 0; i < 32; i++) {
+    int stringAmount = strlen(string);
+    for(int i = 0; i < stringAmount; i++) {
         
-        if(c == charMap[i]) {
+        if(c == string[i]) {
+            
             index = i; 
             break;
         }
@@ -44,11 +70,36 @@ unsigned int IndexForChar(char c) {
     return index;
 }
 
+char* GetNeighbor(char* hash, int direction) {
+    
+    int hashLength = strlen(hash);
+    
+	char lastChar = hash[hashLength - 1];
+    
+    int isEven = hashLength % 2;
+    char** border = isEven ? evenBorders : oddBorders;
+    char** neighbor = isEven ? evenNeighbors : oddNeighbors; 
+    
+    char* base = malloc(sizeof(char) * 1);
+    base[0] = '\0';
+    strncat(base, hash, hashLength - 1);
+    
+	if(IndexForChar(lastChar, border[direction]) != -1)
+		base = GetNeighbor(base, direction);
+    
+    lastChar = charMap[IndexForChar(lastChar, neighbor[direction])];
+        
+    char lastHash[] = {lastChar, '\0'};
+    strcat(base, lastHash);
+    
+	return base;
+}
+
 
 char* SGGeohashEncode(double lat, double lng, int precision) {
     
     if(precision < 1 || precision > 20)
-        precision = 10;
+        precision = 12;     // Default at 12
     
     char* hash = NULL;
     
@@ -107,7 +158,7 @@ char* SGGeohashEncode(double lat, double lng, int precision) {
 
 SGGeoCoord SGGeohashDecode(char* hash) {
     
-    SGGeoCoord coordinate = {0.0, 0.0};
+    SGGeoCoord coordinate = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     
     if(hash) {
         
@@ -124,7 +175,7 @@ SGGeoCoord SGGeohashDecode(char* hash) {
             double delta;
             for(int i = 0; i < charAmount; i++) {
             
-                charMapIndex = IndexForChar(hash[i]);
+                charMapIndex = IndexForChar(hash[i], (char*)charMap);
                 
                 if(charMapIndex < 0)
                     break;
@@ -145,12 +196,41 @@ SGGeoCoord SGGeohashDecode(char* hash) {
                 }
             
             }
-        
+            
             coordinate.latitude = latInterval.high - ((latInterval.high - latInterval.low) / 2.0);
             coordinate.longitude = lngInterval.high - ((lngInterval.high - lngInterval.low) / 2.0);
+            
+            coordinate.topLeft = latInterval.high;
+            coordinate.topRight = lngInterval.high;
+            coordinate.bottomRight = latInterval.low;
+            coordinate.bottomLeft = lngInterval.low;
         }
     }
     
     return coordinate;
+}
+
+
+char** SGGeohashNeighbors(char* hash) {
+
+    char** neighbors = NULL;
+    
+    if(hash) {
+        
+        // N, NE, E, SE, S, SW, W, NW
+        neighbors = (char**)malloc(sizeof(char*) * 8);
+        
+        neighbors[0] = GetNeighbor(hash, NORTH);
+        neighbors[2] = GetNeighbor(hash, EAST);
+        neighbors[4] = GetNeighbor(hash, SOUTH);
+        neighbors[6] = GetNeighbor(hash, WEST);
+        neighbors[1] = GetNeighbor(neighbors[0], EAST);
+        neighbors[7] = GetNeighbor(neighbors[0], WEST);        
+        neighbors[3] = GetNeighbor(neighbors[4], EAST);
+        neighbors[5] = GetNeighbor(neighbors[4], WEST);        
+    
+    }
+    
+    return neighbors;
 }
 
