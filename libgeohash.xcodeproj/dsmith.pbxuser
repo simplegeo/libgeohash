@@ -8,8 +8,8 @@
 			D2AAC045055464E500DB518D /* libgeohash */,
 		);
 		breakpoints = (
-			4AC02551107D060300ACE690 /* SGGeohash.c:93 */,
-			4AC02588107D0A6100ACE690 /* SGGeohash.c:106 */,
+			4AC02551107D060300ACE690 /* SGGeohash.c:85 */,
+			4AC02588107D0A6100ACE690 /* SGGeohash.c:98 */,
 		);
 		codeSenseManager = 4AC0BAAC107BBD9600E69D9F /* Code sense */;
 		executables = (
@@ -100,6 +100,7 @@
 			4AC025D6107D112800ACE690 /* PBXTextBookmark */ = 4AC025D6107D112800ACE690 /* PBXTextBookmark */;
 			4AC025DA107D118C00ACE690 /* PBXTextBookmark */ = 4AC025DA107D118C00ACE690 /* PBXTextBookmark */;
 			4AC025E0107D147600ACE690 /* PBXTextBookmark */ = 4AC025E0107D147600ACE690 /* PBXTextBookmark */;
+			4AC025E1107D14C200ACE690 /* PBXTextBookmark */ = 4AC025E1107D14C200ACE690 /* PBXTextBookmark */;
 			4AC0BB80107BC4D200E69D9F = 4AC0BB80107BC4D200E69D9F /* PBXTextBookmark */;
 			4AC0BB81107BC4D200E69D9F = 4AC0BB81107BC4D200E69D9F /* PlistBookmark */;
 		};
@@ -132,12 +133,12 @@
 		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
 		name = "SGGeohash.c: 93";
 		rLen = 0;
-		rLoc = 2553;
+		rLoc = 2214;
 		rType = 0;
 		vrLen = 1230;
 		vrLoc = 1990;
 	};
-	4AC02551107D060300ACE690 /* SGGeohash.c:93 */ = {
+	4AC02551107D060300ACE690 /* SGGeohash.c:85 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -149,13 +150,13 @@
 		functionName = "GetNeighbor()";
 		hitCount = 4;
 		ignoreCount = 0;
-		lineNumber = 93;
+		lineNumber = 85;
 		location = SGGeohashTester;
 		modificationTime = 276631951.86333;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	4AC02588107D0A6100ACE690 /* SGGeohash.c:106 */ = {
+	4AC02588107D0A6100ACE690 /* SGGeohash.c:98 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -167,7 +168,7 @@
 		functionName = "GetNeighbor()";
 		hitCount = 3;
 		ignoreCount = 0;
-		lineNumber = 106;
+		lineNumber = 98;
 		location = SGGeohashTester;
 		modificationTime = 276631950.879072;
 		originalNumberOfMultipleMatches = 1;
@@ -178,7 +179,7 @@
 		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
 		name = "SGGeohash.c: 108";
 		rLen = 0;
-		rLoc = 2443;
+		rLoc = 2104;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 2962;
@@ -192,7 +193,7 @@
 		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
 		name = "SGGeohash.c: 110";
 		rLen = 0;
-		rLoc = 2518;
+		rLoc = 2179;
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 2962;
@@ -212,7 +213,7 @@
 		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
 		name = "SGGeohash.c: 110";
 		rLen = 0;
-		rLoc = 2518;
+		rLoc = 2179;
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 2962;
@@ -232,7 +233,7 @@
 		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
 		name = "SGGeohash.c: 124";
 		rLen = 0;
-		rLoc = 2949;
+		rLoc = 2610;
 		rType = 0;
 		vrLen = 1144;
 		vrLoc = 2602;
@@ -242,7 +243,7 @@
 		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
 		name = "SGGeohash.c: 124";
 		rLen = 0;
-		rLoc = 2949;
+		rLoc = 2610;
 		rType = 0;
 		vrLen = 1144;
 		vrLoc = 2602;
@@ -252,9 +253,19 @@
 		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
 		name = "SGGeohash.c: 105";
 		rLen = 0;
-		rLoc = 2949;
+		rLoc = 2610;
 		rType = 0;
 		vrLen = 1182;
+		vrLoc = 1621;
+	};
+	4AC025E1107D14C200ACE690 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */;
+		name = "SGGeohash.c: 97";
+		rLen = 0;
+		rLoc = 2610;
+		rType = 0;
+		vrLen = 1011;
 		vrLoc = 1621;
 	};
 	4AC0BAA7107BBD9600E69D9F /* SGGeohash.h */ = {
@@ -267,9 +278,9 @@
 	};
 	4AC0BAA8107BBD9600E69D9F /* SGGeohash.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {866, 3276}}";
-			sepNavSelRange = "{2949, 0}";
-			sepNavVisRange = "{1621, 1182}";
+			sepNavIntBoundsRect = "{{0, 0}, {866, 3159}}";
+			sepNavSelRange = "{2610, 0}";
+			sepNavVisRange = "{1621, 1011}";
 			sepNavWindowFrame = "{{207, 194}, {879, 643}}";
 		};
 	};

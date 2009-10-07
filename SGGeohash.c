@@ -70,14 +70,6 @@ unsigned int IndexForChar(char c, char* string) {
     return index;
 }
 
-//srcHash = srcHash.toLowerCase();
-//var lastChr = srcHash.charAt(srcHash.length-1);
-//var type = (srcHash.length % 2) ? 'odd' : 'even';
-//var base = srcHash.substring(0,srcHash.length-1);
-//if (BORDERS[dir][type].indexOf(lastChr)!=-1)
-//base = calculateAdjacent(base, dir);
-//return base + BASE32[NEIGHBORS[dir][type].indexOf(lastChr)];
-
 char* GetNeighbor(char* hash, int direction) {
     
     int hashLength = strlen(hash);
@@ -106,7 +98,6 @@ char* GetNeighbor(char* hash, int direction) {
     
 	return base;
 }
-
 
 char* SGGeohashEncode(double lat, double lng, int precision) {
     
