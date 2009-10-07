@@ -46,8 +46,8 @@ static char* evenNeighbors[] = {"p0r21436x8zb9dcf5h7kjnmqesgutwvy",
 
 static char* oddNeighbors[] = {"bc01fg45238967deuvhjyznpkmstqrwx", 
                                "p0r21436x8zb9dcf5h7kjnmqesgutwvy",
-                               "14365h7k9dcfesgujnmqp0r2twvyx8zb",    
-                                "238967debc01fg45kmstqrwxuvhjyznp"    
+                                "238967debc01fg45kmstqrwxuvhjyznp",
+                               "14365h7k9dcfesgujnmqp0r2twvyx8zb"    
                                 };
 
 static char* evenBorders[] = {"prxz", "bcfguvyz", "028b", "0145hjnp"};
@@ -70,15 +70,23 @@ unsigned int IndexForChar(char c, char* string) {
     return index;
 }
 
+//srcHash = srcHash.toLowerCase();
+//var lastChr = srcHash.charAt(srcHash.length-1);
+//var type = (srcHash.length % 2) ? 'odd' : 'even';
+//var base = srcHash.substring(0,srcHash.length-1);
+//if (BORDERS[dir][type].indexOf(lastChr)!=-1)
+//base = calculateAdjacent(base, dir);
+//return base + BASE32[NEIGHBORS[dir][type].indexOf(lastChr)];
+
 char* GetNeighbor(char* hash, int direction) {
     
     int hashLength = strlen(hash);
     
 	char lastChar = hash[hashLength - 1];
     
-    int isEven = hashLength % 2;
-    char** border = isEven ? evenBorders : oddBorders;
-    char** neighbor = isEven ? evenNeighbors : oddNeighbors; 
+    int isOdd = hashLength % 2;
+    char** border = isOdd ? oddBorders : evenBorders;
+    char** neighbor = isOdd ? oddNeighbors : evenNeighbors; 
     
     char* base = malloc(sizeof(char) * 1);
     base[0] = '\0';
@@ -87,10 +95,14 @@ char* GetNeighbor(char* hash, int direction) {
 	if(IndexForChar(lastChar, border[direction]) != -1)
 		base = GetNeighbor(base, direction);
     
-    lastChar = charMap[IndexForChar(lastChar, neighbor[direction])];
+    int indexOfNeighbor = IndexForChar(lastChar, neighbor[direction]);
+    lastChar = charMap[indexOfNeighbor];
         
-    char lastHash[] = {lastChar, '\0'};
+    char* lastHash = malloc(sizeof(char) * 2);
+    lastHash[0] = lastChar;
+    lastHash[1] = '\0';
     strcat(base, lastHash);
+    free(lastHash);
     
 	return base;
 }
@@ -105,8 +117,8 @@ char* SGGeohashEncode(double lat, double lng, int precision) {
     
     if(lat <= 90.0 && lat >= -90.0 && lng <= 180.0 && lng >= -180.0) {
         
-        hash = (char*)malloc(sizeof(char) * precision + 1);
-        hash[precision] = '0';
+        hash = (char*)malloc(sizeof(char) * (precision + 1));
+        hash[precision] = '\0';
         
         precision *= 5.0;
         
@@ -141,8 +153,8 @@ char* SGGeohashEncode(double lat, double lng, int precision) {
                 interval->high = mid;
             
             if(!(i % 5)) {
-             
-                hash[i / 5] = charMap[hashChar];
+                
+                hash[(i - 1) / 5] = charMap[hashChar];
                 hashChar = 0;
 
             }
@@ -200,10 +212,10 @@ SGGeoCoord SGGeohashDecode(char* hash) {
             coordinate.latitude = latInterval.high - ((latInterval.high - latInterval.low) / 2.0);
             coordinate.longitude = lngInterval.high - ((lngInterval.high - lngInterval.low) / 2.0);
             
-            coordinate.topLeft = latInterval.high;
-            coordinate.topRight = lngInterval.high;
-            coordinate.bottomRight = latInterval.low;
-            coordinate.bottomLeft = lngInterval.low;
+            coordinate.north = latInterval.high;
+            coordinate.east = lngInterval.high;
+            coordinate.south = latInterval.low;
+            coordinate.west = lngInterval.low;
         }
     }
     
@@ -221,13 +233,15 @@ char** SGGeohashNeighbors(char* hash) {
         neighbors = (char**)malloc(sizeof(char*) * 8);
         
         neighbors[0] = GetNeighbor(hash, NORTH);
-        neighbors[2] = GetNeighbor(hash, EAST);
-        neighbors[4] = GetNeighbor(hash, SOUTH);
-        neighbors[6] = GetNeighbor(hash, WEST);
         neighbors[1] = GetNeighbor(neighbors[0], EAST);
-        neighbors[7] = GetNeighbor(neighbors[0], WEST);        
-        neighbors[3] = GetNeighbor(neighbors[4], EAST);
-        neighbors[5] = GetNeighbor(neighbors[4], WEST);        
+        neighbors[2] = GetNeighbor(hash, EAST);
+        neighbors[3] = GetNeighbor(neighbors[2], SOUTH);
+        neighbors[4] = GetNeighbor(hash, SOUTH);
+        neighbors[5] = GetNeighbor(neighbors[4], WEST);                
+        neighbors[6] = GetNeighbor(hash, WEST);
+        neighbors[7] = GetNeighbor(neighbors[6], NORTH);        
+
+
     
     }
     

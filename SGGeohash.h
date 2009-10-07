@@ -12,21 +12,12 @@ typedef struct SGGeoCoordStruct {
     double latitude;
     double longitude;
     
-    double topLeft;
-    double topRight;
-    double bottomRight;
-    double bottomLeft;
+    double north;
+    double east;
+    double south;
+    double west;
     
 } SGGeoCoord;
-
-typedef struct SGBoundingBoxStruct {
-    
-    double north;
-    double south;
-    double east;
-    double west;
-        
-} SGBoundingBox;
 
 /*
  * Creates a the hash at the specified precision. If precision is set to 0.
