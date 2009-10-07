@@ -32,13 +32,13 @@ char** geohash_neighbors(char* hash);
 
 Uses the bounding box declared at hash and calculates the 8 neighboring boxes. An example is show below.
 
-ezefx ezs48 ezs49
-ezefr ezs42 ezs43
-ezefp ezs40 ezs41
++ ezefx ezs48 ezs49
++ ezefr ezs42 ezs43
++ ezefp ezs40 ezs41
 
 The value returned is an array of char* with length of 8. The neighboring positions of values are shown 
 below with each box representing the index of the array.
 
-7 0 1
-6 * 2
-5 4 3
++ 7 0 1
++ 6 * 2
++ 5 4 3
