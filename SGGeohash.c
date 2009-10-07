@@ -57,7 +57,8 @@ unsigned int IndexForChar(char c, char* string) {
     
     int index = -1;
     int stringAmount = strlen(string);
-    for(int i = 0; i < stringAmount; i++) {
+    int i;
+    for(i = 0; i < stringAmount; i++) {
         
         if(c == string[i]) {
             
@@ -119,7 +120,8 @@ char* SGGeohashEncode(double lat, double lng, int precision) {
         double coord, mid;
         int isEven = 1;
         unsigned int hashChar = 0;
-        for(int i = 1; i <= precision; i++) {
+        int i;
+        for(i = 1; i <= precision; i++) {
          
             if(isEven) {
             
@@ -176,7 +178,8 @@ SGGeoCoord SGGeohashDecode(char* hash) {
         
             int isEven = 1;
             double delta;
-            for(int i = 0; i < charAmount; i++) {
+            int i, j;
+            for(i = 0; i < charAmount; i++) {
             
                 charMapIndex = IndexForChar(hash[i], (char*)charMap);
                 
@@ -184,7 +187,7 @@ SGGeoCoord SGGeohashDecode(char* hash) {
                     break;
             
                 // Interpret the last 5 bits of the integer
-                for(int j = 0; j < 5; j++) {
+                for(j = 0; j < 5; j++) {
                 
                     interval = isEven ? &lngInterval : &latInterval;
                 

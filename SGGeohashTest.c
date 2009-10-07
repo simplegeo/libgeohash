@@ -66,13 +66,13 @@ void checkHashes(char* hash, char* expected) {
     
     if(strcmp(hash, expected) != 0) {
         printf("Error: Expected hash = %s. (%s)\n", hash, expected);
-//        abort();
     }
 }
 
 void checkNeighbors(char** neighbors, char** expectedNeighbors) {
  
-    for(int i = 0; i < 8; i++)
+    int i;
+    for(i = 0; i < 8; i++)
         if(strcmp(neighbors[i], expectedNeighbors[i]) != 0)
             printf("Error: Expected hash = %s at index %i. (%s)\n", expectedNeighbors[i], i, neighbors[i]);
 
@@ -124,6 +124,7 @@ int main() {
     neighbors = SGGeohashNeighbors("9xj5smj4w40m");
     checkNeighbors(neighbors, expectedNeighbors);
     
+    printf("All Tests Passed\n");
     
     return 0;
 }
