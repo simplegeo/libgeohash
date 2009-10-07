@@ -1,25 +1,24 @@
 libgeohash
+==========
 
 Derek Smith 
+-----------
 derek@simplegeo.com
+-------------------
 
 A static library used for encoding/decoding geohashes.
 
 
 To use libgeohash just run make. Link libgeohash.a and include geohash.h into your project.
 
-------------------------------------------------------------------------------------------
-
-Encode
+### Encode
 
 char* geohash_encode(double lat, double lng, int precision);
 
 Takes in latitude and longitude with a desired precision and returns the correct hash value. If
 precision < 0 or precision > 20, a default value of 12 will be used.
 
-------------------------------------------------------------------------------------------
-
-Decode
+### Decode
 
 GeoCoord geohash_decode(char* hash);
 
@@ -27,9 +26,7 @@ GeoCoord geohash_decode(char* hash);
 Produces an allocated GeoCoord structure which contains the latitude and longitude that was decoded from
 the geohash. A GeoCoord also provides the bounding box for the geohash (north, east, south, west).
 
-------------------------------------------------------------------------------------------
-
-Neighbors
+### Neighbors
 
 char** geohash_neighbors(char* hash);
 
