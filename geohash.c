@@ -1,10 +1,31 @@
 /*
- *  geohahs.c
+ *  geohash.c
  *  libgeohash
  *
  *  Created by Derek Smith on 10/6/09.
- *  Copyright 2009 SimpleGeo. All rights reserved.
+ *  Copyright (c) 2010, SimpleGeo
+ *      All rights reserved.
  *
+ *  Redistribution and use in source and binary forms, with or without 
+ *  modification, are permitted provided that the following conditions are met:
+
+ *  Redistributions of source code must retain the above copyright notice, this list
+ *  of conditions and the following disclaimer. Redistributions in binary form must 
+ *  reproduce the above copyright notice, this list of conditions and the following 
+ *  disclaimer in the documentation and/or other materials provided with the distribution.
+ *  Neither the name of the SimpleGeo nor the names of its contributors may be used
+ *  to endorse or promote products derived from this software without specific prior 
+ *  written permission. 
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+ *  EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ *  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL 
+ *  THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE 
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ *  AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ *  OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
 #include "geohash.h"
@@ -24,6 +45,8 @@
 #define SOUTH               2
 #define WEST                3
 
+#define LENGTH_OF_DEGREE	111100				// meters
+
 typedef struct IntervalStruct {
     
     double high;
@@ -39,7 +62,6 @@ static char char_map[32] =  "0123456789bcdefghjkmnpqrstuvwxyz";
  *  The follow character maps were created by Dave Troy and used in his Javascript Geohashing
  *  library. http://github.com/davetroy/geohash-js
  */
-
 static char *even_neighbors[] = {"p0r21436x8zb9dcf5h7kjnmqesgutwvy",
                                 "bc01fg45238967deuvhjyznpkmstqrwx", 
                                 "14365h7k9dcfesgujnmqp0r2twvyx8zb",
@@ -104,8 +126,8 @@ char* get_neighbor(char *hash, int direction) {
 
 char* geohash_encode(double lat, double lng, int precision) {
     
-    if(precision < 1 || precision > 20)
-        precision = 12;     // Default at 12
+    if(precision < 1 || precision > 12)
+        precision = 6;
     
     char* hash = NULL;
     
@@ -238,10 +260,34 @@ char** geohash_neighbors(char *hash) {
         neighbors[6] = get_neighbor(hash, WEST);
         neighbors[7] = get_neighbor(neighbors[6], NORTH);        
 
-
-    
     }
     
     return neighbors;
 }
 
+GeoBoxDimension geohash_dimensions_for_precision(int precision) {
+	
+	GeoBoxDimension dimensions = {0.0, 0.0};
+	
+	if(precision > 0) {
+	
+		int lat_times_to_cut = precision * 5 / 2;
+		int lng_times_to_cut = precision * 5 / 2 + (precision % 2 ? 1 : 0);
+	
+		double width = 360.0;
+		double height = 180.0;
+	
+		int i;
+		for(i = 0; i < lat_times_to_cut; i++)
+			height /= 2.0;
+		
+		for(i = 0; i < lng_times_to_cut; i++)
+			width /= 2.0;
+		
+		dimensions.width = width;
+		dimensions.height = height;
+		
+	}
+	
+	return dimensions;
+}
