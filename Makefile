@@ -8,7 +8,7 @@ library:
 	rm geohash.o
 	
 test:
-	gcc geohash_test.c libgeohash.a 	
+	gcc geohash_test.c geohash.c 	
 	./a.out
 	rm a.out
 	
