@@ -10,7 +10,6 @@
 
 #include <string.h>
 #include <stdio.h>
-#include <system.h>
 
 void check_coords(GeoCoord coord, GeoCoord expected) {
  
