@@ -10,6 +10,7 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <system.h>
 
 void check_coords(GeoCoord coord, GeoCoord expected) {
  
@@ -65,7 +66,7 @@ void check_coords(GeoCoord coord, GeoCoord expected) {
 void checkHashes(char* hash, char* expected) {
     
     if(strcmp(hash, expected) != 0) {
-        printf("Error: Expected hash = %s. (%s)\n", hash, expected);
+        printf("Error: Expected hash = %s. (%s)\n", expected, hash);
     }
 }
 
@@ -75,7 +76,6 @@ void checkNeighbors(char** neighbors, char** expectedNeighbors) {
     for(i = 0; i < 8; i++)
         if(strcmp(neighbors[i], expectedNeighbors[i]) != 0)
             printf("Error: Expected hash = %s at index %i. (%s)\n", expectedNeighbors[i], i, neighbors[i]);
-
 }
 
 int main() {
@@ -123,8 +123,6 @@ int main() {
     
     neighbors = geohash_neighbors("9xj5smj4w40m");
     checkNeighbors(neighbors, expectedNeighbors);
-    
-    printf("All Tests Passed\n");
     
     return 0;
 }
