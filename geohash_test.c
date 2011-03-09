@@ -106,7 +106,7 @@ int main() {
     checkHashes(hash, "9x");
     
     hash = geohash_encode(40.018141, -105.274858, 0);
-    checkHashes(hash, "9xj5smj4w40m");
+    checkHashes(hash, "9xj5sm");
     
     // Neighbors
     
