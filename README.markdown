@@ -16,7 +16,7 @@ To use libgeohash just run make. Link libgeohash.a and include geohash.h into yo
 char* geohash_encode(double lat, double lng, int precision);
 
 Takes in latitude and longitude with a desired precision and returns the correct hash value. If
-precision < 0 or precision > 20, a default value of 12 will be used.
+precision < 0 or precision > 20, a default value of 6 will be used.
 
 ### Decode
 
